@@ -23,6 +23,7 @@ public class HandlerException {
 
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity exception(Exception exception) {
+        exception.printStackTrace();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Error(exception.getMessage()));
     }
 
