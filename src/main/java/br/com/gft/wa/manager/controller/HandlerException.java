@@ -1,5 +1,7 @@
 package br.com.gft.wa.manager.controller;
 
+import br.com.gft.wa.manager.domain.BusinessException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -14,9 +16,14 @@ public class HandlerException {
         return ResponseEntity.badRequest().body(new Error(message));
     }
 
-    @ExceptionHandler(value = RuntimeException.class)
-    public ResponseEntity runtimeException(RuntimeException exception) {
+    @ExceptionHandler(value = BusinessException.class)
+    public ResponseEntity businessException(BusinessException exception) {
         return ResponseEntity.badRequest().body(new Error(exception.getMessage()));
+    }
+
+    @ExceptionHandler(value = Exception.class)
+    public ResponseEntity exception(Exception exception) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Error(exception.getMessage()));
     }
 
     class Error {

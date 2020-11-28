@@ -48,7 +48,7 @@ public class WaControl {
     }
 
     public void reserve(String project, String reservation, Integer amountDays, Employee user) {
-        if (!status.canPropose) {
+        if (!status.canReserve) {
             throw new RuntimeException("Funcionário " + employee.getName() + " não pode ser reservado, pois está " + status.description);
         }
         status = RESERVED;
