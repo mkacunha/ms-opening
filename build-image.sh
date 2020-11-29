@@ -1,0 +1,2 @@
+mvn spring-boot:build-image -Dspring-boot.build-image.imageName=us.gcr.io/digital-hackathon-time-6/ms-wa-opening:0.0.1-SNAPSHOT
+docker push us.gcr.io/digital-hackathon-time-6/ms-wa-opening:0.0.1-SNAPSHOT

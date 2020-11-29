@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.gft.wa</groupId>
-    <artifactId>ms-wa-manager</artifactId>
+    <artifactId>ms-wa-openings</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ms-wa-manager</name>
+    <name>ms-wa-opening</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
