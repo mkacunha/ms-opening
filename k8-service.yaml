@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ms-wa-manager-service
+  name: ms-wa-openings-service
 spec:
   selector:
-    app: ms-wa-manager
+    app: ms-wa-opening
   ports:
     - protocol: TCP
       port: 8080
-      targetPort: 8080
+      targetPort: http
